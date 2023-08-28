@@ -373,9 +373,9 @@ public class JdbcResultSetMetaDataTest {
         return 10;
       case NUMERIC:
       case PG_NUMERIC:
-        return 14;
+        return 38;
       case FLOAT64:
-        return 14;
+        return 38;
       case STRING:
         int length = subject.getPrecision(column);
         return length == 0 ? 50 : length;
@@ -433,14 +433,14 @@ public class JdbcResultSetMetaDataTest {
       case DATE:
         return 10;
       case FLOAT64:
-        return 14;
+        return 38;
       case INT64:
         return 10;
       case TIMESTAMP:
         return 24;
       case NUMERIC:
       case PG_NUMERIC:
-        return 14;
+        return 38;
       case STRING:
       case JSON:
       case PG_JSONB:
@@ -461,7 +461,7 @@ public class JdbcResultSetMetaDataTest {
 
   private int getScale(TestColumn col) {
     if (col.type == Type.float64() || col.type == Type.numeric() || col.type == Type.pgNumeric()) {
-      return 15;
+      return 9;
     }
     return 0;
   }

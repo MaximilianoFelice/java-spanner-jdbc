@@ -96,11 +96,11 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
       case Types.DATE:
         return 10;
       case Types.DOUBLE:
-        return 14;
+        return 38;
       case Types.BIGINT:
         return 10;
       case Types.NUMERIC:
-        return 14;
+        return 38;
       case Types.NVARCHAR:
         int length = getPrecision(column);
         return length == 0 ? DEFAULT_COL_DISPLAY_SIZE_FOR_VARIABLE_LENGTH_COLS : length;
@@ -135,12 +135,12 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
       case Types.DATE:
         return 10;
       case Types.DOUBLE:
-        return 14;
+        return 38;
       case Types.BIGINT:
       case Types.INTEGER:
         return 10;
       case Types.NUMERIC:
-        return 14;
+        return 38;
       case Types.TIMESTAMP:
         return 24;
       default:
@@ -156,7 +156,7 @@ class JdbcResultSetMetaData extends AbstractJdbcWrapper implements ResultSetMeta
   public int getScale(int column) {
     int colType = getColumnType(column);
     if (colType == Types.DOUBLE || colType == Types.NUMERIC) {
-      return 15;
+      return 9;
     }
     return 0;
   }
